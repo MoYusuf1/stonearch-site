@@ -149,7 +149,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
     <div class="hero-body">
       <h1>Your Customers Search For A Website. Make Sure It&rsquo;s There.</h1>
       <p>One-page websites for Minneapolis small businesses that live on Instagram &mdash; built from a proven template, live in days.</p>
-      <form class="pillbar" onsubmit="event.preventDefault();document.getElementById('bizname').value=this.biz.value;document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      <form class="pillbar" onsubmit="event.preventDefault();var b=encodeURIComponent(this.biz.value||'');window.location.href='mailto:stonearchwebdesign@gmail.com?subject='+encodeURIComponent('Free mockup — '+(this.biz.value||'my business'))+'&body='+encodeURIComponent('Hi Stone Arch — I would like a free mockup for my business: '+(this.biz.value||''));">
         <input name="biz" type="text" placeholder="Your business name&hellip;" aria-label="Your business name">
         <button type="submit" aria-label="Start">&#8594;</button>
       </form>
@@ -196,7 +196,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">Website</span>
           <h3>One-Page Website</h3>
           <span class="tag">Most popular</span>
-          <div class="row"><span class="price">$499 <small>one-time</small></span><a class="plus" href="#contact" data-svc="0" aria-label="Start with a one-page website">+</a></div>
+          <div class="row"><span class="price">$499 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Start with a one-page website">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
@@ -205,7 +205,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">Monthly</span>
           <h3>Care Plan</h3>
           <span class="tag">Hosting + 2 edits/mo</span>
-          <div class="row"><span class="price">$49<small>/mo</small></span><a class="plus" href="#contact" data-svc="0" aria-label="Start with the care plan">+</a></div>
+          <div class="row"><span class="price">$49<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Start with the care plan">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
@@ -214,7 +214,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">Monthly</span>
           <h3>Growth Program</h3>
           <span class="tag">Reviews + text-back + Google</span>
-          <div class="row"><span class="price">$199<small>/mo</small></span><a class="plus" href="#contact" data-svc="1" aria-label="Start with the growth program">+</a></div>
+          <div class="row"><span class="price">$199<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Growth%20program%20—%20$199/mo" data-svc="1" aria-label="Start with the growth program">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
@@ -223,7 +223,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">One-off</span>
           <h3>Google Profile Fix</h3>
           <span class="tag">Maps + search, done right</span>
-          <div class="row"><span class="price">$99–$199</span><a class="plus" href="#contact" data-svc="2" aria-label="Start with a Google profile fix">+</a></div>
+          <div class="row"><span class="price">$99–$199</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Google%20Business%20Profile%20fix" data-svc="2" aria-label="Start with a Google profile fix">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
@@ -232,7 +232,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">One-off</span>
           <h3>Website Audit</h3>
           <span class="tag">First look free</span>
-          <div class="row"><span class="price">$49 <small>one-time</small></span><a class="plus" href="#contact" data-svc="3" aria-label="Start with an audit">+</a></div>
+          <div class="row"><span class="price">$49 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Website%20audit%20—%20$49" data-svc="3" aria-label="Start with an audit">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="web">
@@ -241,7 +241,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">Website</span>
           <h3>Link-in-Bio Page</h3>
           <span class="tag">Same-day starter site</span>
-          <div class="row"><span class="price">$49–$99</span><a class="plus" href="#contact" data-svc="4" aria-label="Start with a link-in-bio page">+</a></div>
+          <div class="row"><span class="price">$49–$99</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Link-in-bio%20page" data-svc="4" aria-label="Start with a link-in-bio page">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
@@ -250,7 +250,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">Monthly add-on</span>
           <h3>Unlimited Edits</h3>
           <span class="tag">For care clients</span>
-          <div class="row"><span class="price">+$50<small>/mo</small></span><a class="plus" href="#contact" data-svc="0" aria-label="Add unlimited edits">+</a></div>
+          <div class="row"><span class="price">+$50<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Add unlimited edits">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
@@ -259,7 +259,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
           <span class="cat">One-off</span>
           <h3>Menu + QR Cards</h3>
           <span class="tag">Digital menu, printed QR</span>
-          <div class="row"><span class="price">$79–$149</span><a class="plus" href="#contact" data-svc="5" aria-label="Start with menu digitizing">+</a></div>
+          <div class="row"><span class="price">$79–$149</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Menu%20digitizing%20+%20QR%20cards" data-svc="5" aria-label="Start with menu digitizing">+</a></div>
         </div>
       </article>
     </div>
@@ -360,22 +360,17 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
       <p class="body" style="color:var(--grey);margin-top:18px;max-width:420px">Tell us about your business and we&rsquo;ll reply by email with next steps &mdash; and a first look at what your site could be. No calls, no meetings, no pressure.</p>
       <a class="more" href="mailto:stonearchwebdesign@gmail.com">stonearchwebdesign@gmail.com <span class="arr">&#8594;</span></a>
     </div>
-    <form action="mailto:stonearchwebdesign@gmail.com" method="post" enctype="text/plain">
-      <input id="bizname" type="text" name="business" placeholder="Business name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <select name="service" id="svc">
-        <option>One-page website — $499 + $49/mo</option>
-        <option>Growth program — $199/mo</option>
-        <option>Google Business Profile fix — $99–$199</option>
-        <option>Website audit — $49 (first look free)</option>
-        <option>Link-in-bio page — $49–$99</option>
-        <option>Menu digitizing + QR — $79–$149</option>
-        <option>Something else</option>
-      </select>
-      <textarea name="message" placeholder="Anything we should know? (hours, links, what you sell)"></textarea>
-      <button type="submit">Request my free mockup</button>
-      <p class="fine"><strong style="color:var(--orange)">Free mockup first &mdash; you pay nothing until you have seen your site.</strong><br>Email only, on purpose. Replies within one business day.</p>
-    </form>
+    <div style="display:grid;gap:16px">
+      <a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:var(--shadow)">
+        <span style="width:52px;height:52px;flex:none;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px">&#9993;</span>
+        <span><strong style="font-size:17.5px;display:block">Email us</strong><span style="color:var(--grey);font-size:14px">stonearchwebdesign@gmail.com — replies within one business day</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:var(--shadow)">
+        <span style="width:52px;height:52px;flex:none;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px">&#9742;</span>
+        <span><strong style="font-size:17.5px;display:block">Call us</strong><span style="color:var(--grey);font-size:14px">Business line coming online — email is fastest today</span></span>
+      </div>
+      <p class="fine"><strong style="color:var(--orange)">Free mockup first &mdash; you pay nothing until you have seen your site.</strong><br>Tell us your business name, what you sell, and your hours — we handle the rest.</p>
+    </div>
   </div>
 </section>
 
@@ -420,14 +415,10 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 </footer>
 
 <script>
-document.querySelectorAll('.plus').forEach(function(b){
-  b.addEventListener('click',function(){ var s=document.getElementById('svc'); if(s&&b.dataset.svc!==undefined){ s.selectedIndex=+b.dataset.svc; } });
 });
 document.querySelectorAll('.tabs button').forEach(function(b){
   b.addEventListener('click',function(){
-    document.querySelectorAll('.plus').forEach(function(b){
-  b.addEventListener('click',function(){ var s=document.getElementById('svc'); if(s&&b.dataset.svc!==undefined){ s.selectedIndex=+b.dataset.svc; } });
-});
+    });
 document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
     b.classList.add('on');
     var f=b.dataset.f;
@@ -437,7 +428,7 @@ document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove
   });
 });
 </script>
-<a href="#contact" id="stickycta" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--orange);color:#fff;text-align:center;font-weight:600;padding:15px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25)">Get my free mockup</a>
+<a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" id="stickycta" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--orange);color:#fff;text-align:center;font-weight:600;padding:15px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25)">Get my free mockup</a>
 <style>@media(max-width:760px){#stickycta{display:block}body{padding-bottom:74px}}</style>
 </body>
 </html>
