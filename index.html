@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stone Arch Web Design — Small Business Websites in Minneapolis | $499 One-Page Sites</title>
 <meta name="description" content="Stone Arch Web Design builds fast, mobile-first one-page websites for Minneapolis–St. Paul small businesses with no website yet. $499 build + $49/mo care. Free mockup first.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -38,7 +39,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 .nav-links{display:flex;gap:38px;font-size:14.5px;font-weight:500}
 .nav-links a{opacity:.92}
 .nav-links a:hover{opacity:1;color:var(--orange)}
-.nav-cta{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:17px}
+.nav-cta{height:42px;padding:0 20px;border-radius:999px;background:var(--orange);color:#fff;display:flex;align-items:center;gap:8px;justify-content:center;font-size:14px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .hero-body{text-align:center;padding:64px 0 118px}
 .hero-body h1{font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.16;max-width:820px;margin:0 auto}
 .hero-body p{margin:22px auto 0;max-width:520px;color:rgba(255,255,255,.78);font-size:16.5px;font-weight:400}
@@ -47,8 +48,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 .pillbar input::placeholder{color:rgba(255,255,255,.65)}
 .pillbar button{width:44px;height:44px;border-radius:50%;border:none;background:var(--orange);color:#fff;font-size:18px;cursor:pointer;flex:none}
 .pillbar button:hover{background:var(--orange-d)}
-.dot{position:absolute;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.5);z-index:1}
-.dot::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--orange)}
 @media(max-width:760px){.nav-links{display:none}.dot{display:none}}
 
 /* ---------- why ---------- */
@@ -90,21 +89,21 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 .split .imgwrap img{position:relative;z-index:1;border-radius:24px;box-shadow:var(--shadow);width:100%;height:420px;object-fit:cover}
 .split p.body{color:var(--grey);margin-top:18px;max-width:440px}
 .collage{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;position:relative;z-index:1}
-.collage img{border-radius:20px;box-shadow:var(--shadow);width:100%;object-fit:cover}
+.collage img{border-radius:20px;box-shadow:var(--shadow);width:100%;object-fit:cover;object-position:top center}
 .collage .c1{height:190px}.collage .c2{height:250px;grid-row:span 2}.collage .c3{height:190px}
 @media(max-width:860px){.split-grid{grid-template-columns:1fr}.split .imgwrap img{height:300px}}
 
 /* ---------- reviews (honest demos) ---------- */
 .reviews{background:var(--band);padding:92px 0 100px;text-align:center}
 .rev-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;text-align:left}
-.rev{border-radius:22px;overflow:hidden;position:relative;height:400px;box-shadow:var(--shadow)}
-.rev img.bg{width:100%;height:100%;object-fit:cover}
+.rev{border-radius:22px;overflow:hidden;position:relative;height:480px;box-shadow:var(--shadow)}
+.rev img.bg{width:100%;height:100%;object-fit:cover;object-position:top center}
 .rev .quote{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:16px;padding:20px 22px;text-align:center;box-shadow:0 10px 26px rgba(0,0,0,.13)}
 .rev .quote .who{font-weight:600;font-size:16px}
 .rev .quote .role{color:#8A8A8A;font-size:12.5px;margin-bottom:6px}
 .rev .quote p{color:#555;font-size:13.5px;line-height:1.55}
 .rev .quote .stars{color:var(--orange);letter-spacing:.2em;font-size:13px;margin-top:8px}
-@media(max-width:900px){.rev-cards{grid-template-columns:1fr}.rev{height:340px}}
+@media(max-width:900px){.rev-cards{grid-template-columns:1fr}.rev{height:430px}}
 
 /* ---------- contact ---------- */
 .contact{padding:100px 0}
@@ -133,9 +132,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 
 <!-- HERO -->
 <header class="hero">
-  <span class="dot" style="left:16%;top:56%"></span>
-  <span class="dot" style="right:12%;top:64%"></span>
-  <div class="wrap hero-in">
+      <div class="wrap hero-in">
     <nav>
       <a class="logo" href="#">Stone<span>Arch</span></a>
       <div class="nav-links">
@@ -144,11 +141,11 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="nav-cta" href="#contact" aria-label="Contact">&#9993;</a>
+      <a class="nav-cta" href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" aria-label="Email Stone Arch Web Design">&#9993; Email us</a>
     </nav>
     <div class="hero-body">
       <h1>Your Customers Search For A Website. Make Sure It&rsquo;s There.</h1>
-      <p>One-page websites for Minneapolis small businesses that live on Instagram &mdash; built from a proven template, live in days.</p>
+      <p>Your customers find you on Instagram &mdash; then they look for a website. If it isn&rsquo;t there, they book the shop that has one. We build yours in days, from $499.</p>
       <form class="pillbar" onsubmit="event.preventDefault();var b=encodeURIComponent(this.biz.value||'');window.location.href='mailto:stonearchwebdesign@gmail.com?subject='+encodeURIComponent('Free mockup — '+(this.biz.value||'my business'))+'&body='+encodeURIComponent('Hi Stone Arch — I would like a free mockup for my business: '+(this.biz.value||''));">
         <input name="biz" type="text" placeholder="Your business name&hellip;" aria-label="Your business name">
         <button type="submit" aria-label="Start">&#8594;</button>
@@ -163,17 +160,17 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
     <h2>Why<br>Choosing Us</h2>
     <div class="why-item">
       <h3>Fixed price, in writing</h3>
-      <p>$499 to build, $49 a month for care. Every price is on this page before any money moves &mdash; no quotes, no surprises.</p>
+      <p>$499 to build, $49 a month for care. No quote games, no hourly billing, no surprise invoices &mdash; the price on this page is the price you pay.</p>
       <a class="more" href="#services">See pricing <span class="arr">&#8594;</span></a>
     </div>
     <div class="why-item">
       <h3>Mockup first, money second</h3>
-      <p>We design your homepage before you pay anything. You judge the work itself &mdash; not a portfolio of strangers.</p>
+      <p>You see your actual homepage before you pay a cent. Like it, we build it. Don&rsquo;t, you walk away &mdash; you risk nothing.</p>
       <a class="more" href="#work">See the demos <span class="arr">&#8594;</span></a>
     </div>
     <div class="why-item">
       <h3>An engineer, not an agency</h3>
-      <p>The person you email is the person who builds your site. No account managers, no hand-offs, everything in writing.</p>
+      <p>Agencies charge $3,000+ and take weeks. You email the person who builds your site &mdash; and it&rsquo;s live in days, not months.</p>
       <a class="more" href="#about">More info <span class="arr">&#8594;</span></a>
     </div>
   </div>
@@ -183,6 +180,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 <section class="products" id="services">
   <div class="wrap">
     <h2 class="title">Best Selling Services</h2>
+    <p style="color:var(--grey);max-width:560px;margin:14px auto 0">Fixed prices, in writing, before any money moves. Start with the website &mdash; add the growth tools when you&rsquo;re ready.</p>
     <div class="tabs" role="tablist">
       <button class="on" data-f="all">All</button>
       <button data-f="web">Websites</button>
@@ -273,8 +271,8 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
     <div class="imgwrap"><img src="img/hero-cafe.jpg" alt="A Minneapolis café interior"></div>
     <div>
       <p class="eyebrow">The Process</p>
-      <h2 class="title">We Provide You The<br>Best Experience</h2>
-      <p class="body">You don&rsquo;t have to worry about the result, because every site starts as a free mockup of <em>your</em> business &mdash; made before you pay, built from a template already tested end to end, and priced in writing from the first email.</p>
+      <h2 class="title">You See Your Site<br>Before You Pay For It</h2>
+      <p class="body">No leap of faith. Every project starts as a free mockup of <em>your</em> business &mdash; your name, your photos, your menu &mdash; built from a template already tested end to end. You approve the real thing, then you pay.</p>
       <a class="more" href="#contact">Start with a free mockup <span class="arr">&#8594;</span></a>
     </div>
   </div>
@@ -285,8 +283,8 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
   <div class="wrap split-grid">
     <div>
       <p class="eyebrow">The Template</p>
-      <h2 class="title">Very Serious Craft<br>Behind Every Build</h2>
-      <p class="body">Because each site is built from our KAITO template &mdash; designed mobile-first, measured for speed, and swapped to your colors, photos, and menu. The same template, shown here as a ramen counter and an ice-cream parlor.</p>
+      <h2 class="title">One Proven Template.<br><br>Unmistakably Yours.</h2>
+      <p class="body">Each site is built from our KAITO template &mdash; mobile-first, fast, and already debugged &mdash; then made yours: your colors, your photos, your menu. That&rsquo;s how a custom-looking site costs $499 instead of $3,000.</p>
       <a class="more" href="#work">See both demos <span class="arr">&#8594;</span></a>
     </div>
     <div class="collage">
@@ -301,7 +299,7 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 <section class="reviews" id="work">
   <div class="wrap">
     <p class="eyebrow">Sample Work</p>
-    <h2 class="title">Judge The Work Yourself</h2>
+    <h2 class="title">Don&rsquo;t Take Our Word For It.<br>Judge The Work.</h2>
     <div class="rev-cards">
       <article class="rev">
         <img class="bg" src="img/kaito-konbu.png" alt="Ramen counter demo">
@@ -356,52 +354,17 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
   <div class="wrap contact-grid">
     <div>
       <p class="eyebrow">Contact</p>
-      <h2 class="title">Start With A<br>Free Mockup</h2>
-      <p class="body" style="color:var(--grey);margin-top:18px;max-width:420px">Tell us about your business and we&rsquo;ll reply by email with next steps &mdash; and a first look at what your site could be. No calls, no meetings, no pressure.</p>
+      <h2 class="title">Get Your Free<br>Mockup This Week</h2>
+      <p class="body" style="color:var(--grey);margin-top:18px;max-width:420px">One email is the whole process. Tell us about your business and we&rsquo;ll send back a first look at your site &mdash; free, no commitment, no sales call. If you like it, we build it.</p>
       <a class="more" href="mailto:stonearchwebdesign@gmail.com">stonearchwebdesign@gmail.com <span class="arr">&#8594;</span></a>
     </div>
-    <div style="display:grid;gap:16px">
-      <a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:var(--shadow)">
-        <span style="width:52px;height:52px;flex:none;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px">&#9993;</span>
-        <span><strong style="font-size:17.5px;display:block">Email us</strong><span style="color:var(--grey);font-size:14px">stonearchwebdesign@gmail.com — replies within one business day</span></span>
-      </a>
-            <p class="fine"><strong style="color:var(--orange)">Free mockup first &mdash; you pay nothing until you have seen your site.</strong><br>Tell us your business name, what you sell, and your hours — we handle the rest.</p>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:38px 36px;text-align:center">
+      <span style="width:64px;height:64px;border-radius:50%;background:var(--orange);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px">&#9993;</span>
+      <strong style="font-size:20px;display:block;margin-bottom:6px">Email us — it&rsquo;s the whole process</strong>
+      <p style="color:var(--grey);font-size:14.5px;max-width:380px;margin:0 auto 22px">Send your business name, what you sell, and your hours. We reply within one business day with your free mockup started.</p>
+      <a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" style="display:inline-block;background:var(--orange);color:#fff;font-weight:600;font-size:15.5px;padding:16px 34px;border-radius:999px">stonearchwebdesign@gmail.com</a>
+      <p style="color:#8A8A8A;font-size:13px;margin-top:18px"><strong style="color:var(--orange)">Free mockup first</strong> — you pay nothing until you have seen your site.</p>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="logo">Stone<span style="color:var(--orange)">Arch</span></div>
-        <p>One-page websites and online-presence fixes for Minneapolis–St. Paul small businesses &mdash; mockup first, fixed price, terms in writing.</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">One-page websites</a></li>
-          <li><a href="#services">Growth program</a></li>
-          <li><a href="#services">Google profile fix</a></li>
-          <li><a href="#services">Website audits</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#work">Sample work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <ul>
-          <li>Email — stonearchwebdesign@gmail.com</li>
-          <li>Minneapolis, Minnesota</li>
-        </ul>
-      </div>
     </div>
     <div class="foot-bottom">
       <span>Copyright &copy; 2026 Stone Arch Web Design</span>
