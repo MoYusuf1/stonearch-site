@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#26333C"/>
+  <rect x="40" y="40" width="720" height="920" rx="28" fill="none" stroke="#E58411" stroke-width="3" opacity="0.55"/>
+  <g transform="translate(400,330)">
+    <path d="M-110 90 V-10 a110 84 0 0 1 220 0 V90 h-52 V-10 a58 44 0 0 0 -116 0 V90 Z" fill="#E58411"/>
+    <rect x="-13" y="-118" width="26" height="30" rx="6" fill="#F5F0E6"/>
+  </g>
+  <text x="400" y="560" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="74" fill="#F5F0E6" letter-spacing="2">YOUR BUSINESS</text>
+  <text x="400" y="630" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#E58411" letter-spacing="6">RIGHT HERE</text>
+  <g transform="translate(400,760)">
+    <rect x="-170" y="-42" width="340" height="84" rx="42" fill="#E58411"/>
+    <text y="12" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="32" fill="#FFFFFF">Free mockup &#8594;</text>
+  </g>
+  <text x="400" y="900" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#9FB0BA">This spot is waiting for your shop</text>
+</svg>
