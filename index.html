@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stone Arch Web Design — Small Business Websites in Minneapolis | $499 One-Page Sites</title>
-<meta name="description" content="Stone Arch Web Design builds fast, mobile-first one-page websites for Minneapolis–St. Paul small businesses with no website yet. $499 build + $49/mo care. Free mockup first.">
+<meta name="description" content="One-page websites for Minneapolis–St. Paul small businesses with no website yet. $499 build + $49/mo care. Free mockup first.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@ h2.title{font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.2;letter-s
 .more .arr{transition:transform .2s}
 .more:hover .arr{transform:translateX(4px)}
 
-/* ---------- header / hero ---------- */
+/* hero */
 .hero{background:var(--dark) url('img/hero-room.jpg') center/cover no-repeat;position:relative;color:#fff}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,40,48,.72) 0%,rgba(29,40,48,.45) 55%,rgba(29,40,48,.78) 100%)}
 .hero-in{position:relative;z-index:1}
@@ -42,15 +42,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 .nav-cta{height:42px;padding:0 20px;border-radius:999px;background:var(--orange);color:#fff;display:flex;align-items:center;gap:8px;justify-content:center;font-size:14px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .hero-body{text-align:center;padding:64px 0 118px}
 .hero-body h1{font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.16;max-width:820px;margin:0 auto}
-.hero-body p{margin:22px auto 0;max-width:520px;color:rgba(255,255,255,.78);font-size:16.5px;font-weight:400}
-.pillbar{margin:36px auto 0;max-width:430px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);border-radius:999px;display:flex;align-items:center;padding:6px 6px 6px 24px}
+.hero-body p.sub{margin:22px auto 0;max-width:520px;color:rgba(255,255,255,.85);font-size:17px;font-weight:500}
+.pill-label{margin:34px auto 10px;font-weight:600;font-size:15px;color:#fff}
+.pillbar{margin:0 auto;max-width:430px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);border-radius:999px;display:flex;align-items:center;padding:6px 6px 6px 24px}
 .pillbar input{flex:1;background:none;border:none;outline:none;color:#fff;font-family:inherit;font-size:14.5px;min-width:0}
-.pillbar input::placeholder{color:rgba(255,255,255,.65)}
+.pillbar input::placeholder{color:rgba(255,255,255,.75)}
 .pillbar button{width:44px;height:44px;border-radius:50%;border:none;background:var(--orange);color:#fff;font-size:18px;cursor:pointer;flex:none}
 .pillbar button:hover{background:var(--orange-d)}
 @media(max-width:760px){.nav-links{display:none}.hero-body h1{font-size:31px;line-height:1.22}}
 
-/* ---------- why ---------- */
+/* why */
 .why{padding:96px 0 88px}
 .why-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:44px;align-items:start}
 .why-grid h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;line-height:1.25}
@@ -59,11 +60,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:540px){.why-grid{grid-template-columns:1fr}}
 
-/* ---------- products ---------- */
+/* products */
 .products{background:var(--band);padding:88px 0 96px;text-align:center}
 .tabs{display:inline-flex;background:#ECECEC;border-radius:999px;padding:5px;margin:30px 0 46px;gap:2px}
-.tabs button{border:none;background:none;font-family:inherit;font-size:14px;font-weight:500;padding:9px 22px;border-radius:999px;cursor:pointer;color:#555}
+.tabs button{border:none;background:none;font-family:inherit;font-size:14px;font-weight:500;padding:9px 22px;border-radius:999px;cursor:pointer;color:#555;min-height:44px}
 .tabs button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+@media(max-width:540px){.tabs{display:flex;flex-wrap:wrap;justify-content:center;border-radius:24px;max-width:100%}.tabs button{padding:9px 14px;font-size:13px;white-space:nowrap;min-height:44px}}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:left}
 .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
 .card .ph{height:190px;overflow:hidden;background:#EFEFEF}
@@ -81,7 +83,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 @media(max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.cards{grid-template-columns:1fr}}
 
-/* ---------- split sections ---------- */
+/* splits */
 .split{padding:104px 0}
 .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .split-grid>*{min-width:0}
@@ -89,38 +91,38 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0
 .split .imgwrap::before{content:"";position:absolute;width:70%;height:78%;right:-26px;top:-26px;background:#F0F0F0;border-radius:24px;z-index:0}
 .split .imgwrap img{position:relative;z-index:1;border-radius:24px;box-shadow:var(--shadow);width:100%;height:420px;object-fit:cover}
 .split p.body{color:var(--grey);margin-top:18px;max-width:440px}
-.collage{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;position:relative;z-index:1}
+.collage{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;position:relative;z-index:1;min-width:0}
 .collage img{border-radius:20px;box-shadow:var(--shadow);width:100%;object-fit:cover;object-position:top center}
-.collage .c1{height:190px}.collage .c2{height:250px;grid-row:span 2}.collage .c3{height:190px}
-@media(max-width:860px){.split-grid{grid-template-columns:1fr}.split .imgwrap img{height:300px}}
+.collage .c1{height:190px}.collage .c2{grid-row:span 2}.collage .c3{height:190px}
+@media(max-width:860px){.split-grid{grid-template-columns:1fr}.split .imgwrap img{height:300px}.split .imgwrap::before{right:-10px;top:-14px}}
 
-/* ---------- reviews (honest demos) ---------- */
+/* sample work */
 .reviews{background:var(--band);padding:92px 0 100px;text-align:center}
 .rev-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;text-align:left}
 .rev{border-radius:22px;overflow:hidden;position:relative;height:480px;box-shadow:var(--shadow)}
+.rev--locked{background:#26333C}
 .rev img.bg{width:100%;height:100%;object-fit:cover;object-position:top center}
 .rev .quote{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:16px;padding:20px 22px;text-align:center;box-shadow:0 10px 26px rgba(0,0,0,.13)}
 .rev .quote .who{font-weight:600;font-size:16px}
 .rev .quote .role{color:#8A8A8A;font-size:12.5px;margin-bottom:6px}
 .rev .quote p{color:#555;font-size:13.5px;line-height:1.55}
-.rev .quote .stars{color:var(--orange);letter-spacing:.2em;font-size:13px;margin-top:8px}
-@media(max-width:900px){.rev-cards{grid-template-columns:1fr}.rev{height:430px}}
+@media(max-width:900px){.rev-cards{grid-template-columns:1fr}.rev{height:500px}}
 
-/* ---------- contact ---------- */
+/* faq */
+.faq-sec{background:var(--band);padding:88px 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;margin-top:44px}
+.faq-grid h3{font-size:17px;margin-bottom:8px}
+.faq-grid p{color:var(--grey);font-size:14.5px}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr;gap:26px}}
+
+/* contact */
 .contact{padding:100px 0}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
 .contact-grid>*{min-width:0}
-.contact form{display:grid;gap:14px}
-.contact input,.contact select,.contact textarea{font-family:inherit;font-size:14.5px;padding:15px 20px;border:1px solid var(--line);border-radius:999px;background:#FAFAFA;outline:none;width:100%}
-.contact textarea{border-radius:20px;resize:vertical;min-height:110px}
-.contact input:focus,.contact select:focus,.contact textarea:focus{border-color:var(--orange)}
-.contact button{background:var(--orange);color:#fff;border:none;font-family:inherit;font-weight:600;font-size:15px;padding:16px;border-radius:999px;cursor:pointer}
-.contact button:hover{background:var(--orange-d)}
-.contact .fine{color:#8A8A8A;font-size:13px;margin-top:4px}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 
-/* ---------- footer ---------- */
-footer{background:var(--band);padding:72px 0 0;margin-top:0}
+/* footer */
+footer{background:var(--band);padding:72px 0 0}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:54px}
 .foot-grid .logo{margin-bottom:14px}
 .foot-grid p{color:var(--grey);font-size:14px;max-width:280px}
@@ -128,13 +130,18 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 .foot-grid ul{list-style:none;display:grid;gap:10px;font-size:14px;color:#444}
 .foot-bottom{border-top:1px solid #E7E7E7;padding:22px 0;display:flex;justify-content:space-between;font-size:13px;color:#8A8A8A}
 @media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.foot-bottom{flex-direction:column;gap:6px;align-items:flex-start}}
+
+/* sticky cta */
+#stickycta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--orange);color:#fff;text-align:center;font-weight:600;padding:15px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+@media(max-width:760px){#stickycta{display:block;bottom:calc(12px + env(safe-area-inset-bottom))}body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <header class="hero">
-      <div class="wrap hero-in">
+  <div class="wrap hero-in">
     <nav>
       <a class="logo" href="#">Stone<span>Arch</span></a>
       <div class="nav-links">
@@ -146,9 +153,10 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
       <a class="nav-cta" href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" aria-label="Email Stone Arch Web Design">&#9993; Email us</a>
     </nav>
     <div class="hero-body">
-      <h1>No Website?<br>They Can&rsquo;t Find You.</h1>
-      <p>One page. $499 flat. Live in days.</p>
-      <form class="pillbar" onsubmit="event.preventDefault();var b=encodeURIComponent(this.biz.value||'');window.location.href='mailto:stonearchwebdesign@gmail.com?subject='+encodeURIComponent('Free mockup — '+(this.biz.value||'my business'))+'&body='+encodeURIComponent('Hi Stone Arch — I would like a free mockup for my business: '+(this.biz.value||''));">
+      <h1>Your Customers Can&rsquo;t Find You.</h1>
+      <p class="sub">One page. $499 flat. Live in days.</p>
+      <p class="pill-label">Get your free mockup:</p>
+      <form class="pillbar" onsubmit="event.preventDefault();window.location.href='mailto:stonearchwebdesign@gmail.com?subject='+encodeURIComponent('Free mockup — '+(this.biz.value||'my business'))+'&body='+encodeURIComponent('Hi Stone Arch — I would like a free mockup for my business: '+(this.biz.value||''));">
         <input name="biz" type="text" placeholder="Your business name&hellip;" aria-label="Your business name">
         <button type="submit" aria-label="Start">&#8594;</button>
       </form>
@@ -159,30 +167,30 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
 <!-- WHY -->
 <section class="why">
   <div class="wrap why-grid">
-    <h2>Why<br>Choosing Us</h2>
+    <h2>Why Us</h2>
     <div class="why-item">
       <h3>Fixed price, in writing</h3>
-      <p>$499 to build, $49 a month for care. No quote games, no hourly billing, no surprise invoices &mdash; the price on this page is the price you pay.</p>
-      <a class="more" href="#services">See pricing <span class="arr">&#8594;</span></a>
+      <p>$499 build, $49/mo care. No hourly bills, no surprises. The listed price is the price.</p>
+      <a class="more" href="#services">Pricing <span class="arr">&#8594;</span></a>
     </div>
     <div class="why-item">
-      <h3>Mockup first, money second</h3>
-      <p>You see your actual homepage before you pay a cent. Like it, we build it. Don&rsquo;t, you walk away &mdash; you risk nothing.</p>
-      <a class="more" href="#work">See the demos <span class="arr">&#8594;</span></a>
+      <h3>Mockup first, pay second</h3>
+      <p>See your real homepage first. Like it, we build it. Don&rsquo;t, walk away.</p>
+      <a class="more" href="#work">See demos <span class="arr">&#8594;</span></a>
     </div>
     <div class="why-item">
       <h3>An engineer, not an agency</h3>
-      <p>Agencies charge $3,000+ and take weeks. You email the person who builds your site &mdash; and it&rsquo;s live in days, not months.</p>
-      <a class="more" href="#about">More info <span class="arr">&#8594;</span></a>
+      <p>Mohamed Yusuf, Minneapolis software engineer. You email the builder. Live in days.</p>
+      <a class="more" href="#about">About <span class="arr">&#8594;</span></a>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- SERVICES -->
 <section class="products" id="services">
   <div class="wrap">
-    <h2 class="title">Best Selling Services</h2>
-    <p style="color:var(--grey);max-width:560px;margin:14px auto 0">Fixed prices, in writing, before any money moves. Start with the website &mdash; add the growth tools when you&rsquo;re ready.</p>
+    <h2 class="title">Services</h2>
+    <p style="color:var(--grey);max-width:560px;margin:14px auto 0">Fixed prices, in writing. Start with a site. Add growth later.</p>
     <div class="tabs" role="tablist">
       <button class="on" data-f="all">All</button>
       <button data-f="web">Websites</button>
@@ -191,75 +199,75 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
     </div>
     <div class="cards">
       <article class="card" data-cat="web">
-        <div class="ph"><img src="img/kaito-konbu.png" alt="One-page website demo — ramen counter"></div>
+        <div class="ph"><img src="img/kaito-konbu.png" style="object-position:50% 22%" alt="One-page website demo — ramen counter"></div>
         <div class="cb">
           <span class="cat">Website</span>
           <h3>One-Page Website</h3>
           <span class="tag">Most popular</span>
-          <div class="row"><span class="price">$499 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Start with a one-page website">+</a></div>
+          <div class="row"><span class="price">$499 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20%E2%80%94%20free%20mockup" aria-label="Start with a one-page website">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
-        <div class="ph"><img src="img/work2.jpg" alt="Care plan"></div>
+        <div class="ph"><img src="img/hero-room.jpg" style="object-position:50% 55%" alt="Care plan"></div>
         <div class="cb">
           <span class="cat">Monthly</span>
           <h3>Care Plan</h3>
           <span class="tag">Hosting + 2 edits/mo</span>
-          <div class="row"><span class="price">$49<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Start with the care plan">+</a></div>
+          <div class="row"><span class="price">$49<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Care%20Plan%20%E2%80%94%20%2449%2Fmo" aria-label="Start with the care plan">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
-        <div class="ph"><img src="img/kaito-marigold.png" alt="Growth program demo — ice-cream parlor"></div>
+        <div class="ph"><img src="img/kaito-marigold.png" style="object-position:50% 22%" alt="Growth program demo — ice-cream parlor"></div>
         <div class="cb">
           <span class="cat">Monthly</span>
           <h3>Growth Program</h3>
-          <span class="tag">Reviews + text-back + Google</span>
-          <div class="row"><span class="price">$199<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Growth%20program%20—%20$199/mo" data-svc="1" aria-label="Start with the growth program">+</a></div>
+          <span class="tag">Review requests, missed-call text-back, Google profile care</span>
+          <div class="row"><span class="price">$199<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Growth%20program%20%E2%80%94%20%24199%2Fmo" aria-label="Start with the growth program">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
-        <div class="ph"><img src="img/work3.jpg" alt="Google Business Profile fix"></div>
+        <div class="ph"><img src="img/hero.jpg" style="object-position:50% 50%;transform:scale(1.9)" alt="Google Business Profile fix"></div>
         <div class="cb">
           <span class="cat">One-off</span>
           <h3>Google Profile Fix</h3>
           <span class="tag">Maps + search, done right</span>
-          <div class="row"><span class="price">$99–$199</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Google%20Business%20Profile%20fix" data-svc="2" aria-label="Start with a Google profile fix">+</a></div>
+          <div class="row"><span class="price">$99–$199</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Google%20Business%20Profile%20fix" aria-label="Start with a Google profile fix">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
-        <div class="ph"><img src="img/work4.jpg" alt="Website audit"></div>
+        <div class="ph"><img src="img/about.jpg" style="object-position:50% 0%;transform:scale(1.06)" alt="Website audit"></div>
         <div class="cb">
           <span class="cat">One-off</span>
           <h3>Website Audit</h3>
           <span class="tag">First look free</span>
-          <div class="row"><span class="price">$49 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Website%20audit%20—%20$49" data-svc="3" aria-label="Start with an audit">+</a></div>
+          <div class="row"><span class="price">$49 <small>one-time</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Website%20audit%20%E2%80%94%20%2449" aria-label="Start with an audit">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="web">
-        <div class="ph"><img src="img/work5.jpg" alt="Link-in-bio page"></div>
+        <div class="ph"><img src="img/kaito-konbu.png" style="object-position:50% 100%" alt="Link-in-bio page"></div>
         <div class="cb">
           <span class="cat">Website</span>
           <h3>Link-in-Bio Page</h3>
           <span class="tag">Same-day starter site</span>
-          <div class="row"><span class="price">$49–$99</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Link-in-bio%20page" data-svc="4" aria-label="Start with a link-in-bio page">+</a></div>
+          <div class="row"><span class="price">$49–$99</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Link-in-bio%20page" aria-label="Start with a link-in-bio page">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="monthly">
-        <div class="ph"><img src="img/about.jpg" alt="Unlimited edits add-on"></div>
+        <div class="ph"><img src="img/kaito-marigold.png" style="object-position:50% 88%" alt="Unlimited edits add-on"></div>
         <div class="cb">
           <span class="cat">Monthly add-on</span>
           <h3>Unlimited Edits</h3>
           <span class="tag">For care clients</span>
-          <div class="row"><span class="price">+$50<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=One-page%20website%20—%20free%20mockup" data-svc="0" aria-label="Add unlimited edits">+</a></div>
+          <div class="row"><span class="price">+$50<small>/mo</small></span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Unlimited%20edits%20add-on%20%E2%80%94%20%2B%2450%2Fmo" aria-label="Add unlimited edits">+</a></div>
         </div>
       </article>
       <article class="card" data-cat="oneoff">
-        <div class="ph"><img src="img/hero-cafe.jpg" alt="Menu digitizing and QR cards"></div>
+        <div class="ph"><img src="img/hero-cafe.jpg" style="object-position:50% 35%" alt="Menu digitizing and QR cards"></div>
         <div class="cb">
           <span class="cat">One-off</span>
           <h3>Menu + QR Cards</h3>
           <span class="tag">Digital menu, printed QR</span>
-          <div class="row"><span class="price">$79–$149</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Menu%20digitizing%20+%20QR%20cards" data-svc="5" aria-label="Start with menu digitizing">+</a></div>
+          <div class="row"><span class="price">$79–$149</span><a class="plus" href="mailto:stonearchwebdesign@gmail.com?subject=Menu%20digitizing%20%2B%20QR%20cards" aria-label="Start with menu digitizing">+</a></div>
         </div>
       </article>
     </div>
@@ -267,49 +275,48 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
   </div>
 </section>
 
-<!-- EXPERIENCES / PROCESS -->
+<!-- PROCESS -->
 <section class="split" id="about">
   <div class="wrap split-grid">
     <div class="imgwrap"><img src="img/hero-cafe.jpg" alt="A Minneapolis café interior"></div>
     <div>
       <p class="eyebrow">The Process</p>
-      <h2 class="title">You See Your Site<br>Before You Pay For It</h2>
-      <p class="body">No leap of faith. Every project starts as a free mockup of <em>your</em> business &mdash; your name, your photos, your menu &mdash; built from a template already tested end to end. You approve the real thing, then you pay.</p>
-      <a class="more" href="#contact">Start with a free mockup <span class="arr">&#8594;</span></a>
+      <h2 class="title">See It Before You Pay</h2>
+      <p class="body">A free mockup of your business — name, photos, menu — on a tested template. Approve it. Then pay.</p>
+      <a class="more" href="#contact">Get a free mockup <span class="arr">&#8594;</span></a>
     </div>
   </div>
 </section>
 
-<!-- MATERIALS / TEMPLATE -->
+<!-- TEMPLATE -->
 <section class="split" style="padding-top:20px">
   <div class="wrap split-grid">
     <div>
       <p class="eyebrow">The Template</p>
-      <h2 class="title">One Proven Template.<br><br>Unmistakably Yours.</h2>
-      <p class="body">Each site is built from our KAITO template &mdash; mobile-first, fast, and already debugged &mdash; then made yours: your colors, your photos, your menu. That&rsquo;s how a custom-looking site costs $499 instead of $3,000.</p>
-      <a class="more" href="#work">See both demos <span class="arr">&#8594;</span></a>
+      <h2 class="title">One Template.<br>Unmistakably Yours.</h2>
+      <p class="body">KAITO: mobile-first, fast, tested. Made yours with your colors, photos, menu. Custom look: $499, not $3,000.</p>
+      <a class="more" href="#work">See demos <span class="arr">&#8594;</span></a>
     </div>
     <div class="collage">
       <img class="c1" src="img/kaito-marigold.png" alt="KAITO template swapped to an ice-cream parlor">
       <img class="c2" src="img/kaito-konbu.png" alt="KAITO template as a ramen counter">
-      <img class="c3" src="img/work2.jpg" alt="Design detail">
+      <img class="c3" src="img/hero-cafe.jpg" style="object-position:50% 40%" alt="Café interior">
     </div>
   </div>
 </section>
 
-<!-- REVIEWS → honest demos -->
+<!-- SAMPLE WORK -->
 <section class="reviews" id="work">
   <div class="wrap">
     <p class="eyebrow">Sample Work</p>
-    <h2 class="title">Don&rsquo;t Take Our Word For It.<br>Judge The Work.</h2>
+    <h2 class="title">Judge The Work.</h2>
     <div class="rev-cards">
       <article class="rev">
         <img class="bg" src="img/kaito-konbu.png" alt="Ramen counter demo">
         <div class="quote">
           <div class="who">Konbu Nori — Demo</div>
           <div class="role">Ramen counter, Minneapolis skyway</div>
-          <p>Our KAITO restaurant template filled with a real shop&rsquo;s hours, menu groups, and photos. A concept demo &mdash; not a client site.</p>
-          
+          <p>Our KAITO template with a real shop&rsquo;s hours, menu, photos. Concept demo — not a client site.</p>
         </div>
       </article>
       <article class="rev">
@@ -317,36 +324,33 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
         <div class="quote">
           <div class="who">Marigold Scoops — Demo</div>
           <div class="role">Fictional ice-cream parlor</div>
-          <p>The same template, swapped in an afternoon: new colors, new photos, new menu. This is how fast your business could be live.</p>
-          
+          <p>Same template, new colors, photos, menu — swapped in an afternoon.</p>
         </div>
       </article>
-      <article class="rev">
-        <img class="bg" src="img/your-business.svg" alt="Your business here — free mockup">
+      <article class="rev rev--locked">
+        <img class="bg" src="img/your-business.svg" alt="Your business here — locked">
         <div class="quote">
           <div class="who">Your Business — Next</div>
           <div class="role">Free mockup, no commitment</div>
-          <p>We&rsquo;re new and we say so. That&rsquo;s why every project starts with a free mockup of your business &mdash; you judge the work, not a pitch.</p>
-          
+          <p>We&rsquo;re new. We say so. Judge a free mockup of your business, not a pitch.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-
 <!-- FAQ -->
-<section style="background:var(--band);padding:88px 0">
+<section class="faq-sec">
   <div class="wrap">
     <p class="eyebrow">FAQ</p>
-    <h2 class="title">Asked Often, Answered Plainly</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;margin-top:44px">
-      <div><h3 style="font-size:17px;margin-bottom:8px">What does it cost, total?</h3><p style="color:var(--grey);font-size:14.5px">$499 once for the website, then $49/mo for care &mdash; $793 total for the build plus the first 6 months of care. Domain registration, if you need one, is about $13/yr at cost.</p></div>
-      <div><h3 style="font-size:17px;margin-bottom:8px">How fast can my site be live?</h3><p style="color:var(--grey);font-size:14.5px">Our target is 2&ndash;3 days from the day we have your menu/services, photos, and hours &mdash; the template does the heavy lifting.</p></div>
-      <div><h3 style="font-size:17px;margin-bottom:8px">What does the $49/mo care include?</h3><p style="color:var(--grey);font-size:14.5px">Hosting management, keeping the site up and secure, and up to 2 small edits a month. Need more? Unlimited edits is +$50/mo.</p></div>
-      <div><h3 style="font-size:17px;margin-bottom:8px">Why a 6-month minimum on care?</h3><p style="color:var(--grey);font-size:14.5px">The $499 build price is low because care keeps the site maintained. Six months keeps it fair on both sides; after that it&rsquo;s month-to-month. (The $0-down agencies lock you in for 12.)</p></div>
-      <div><h3 style="font-size:17px;margin-bottom:8px">What if I cancel inside 6 months?</h3><p style="color:var(--grey);font-size:14.5px">The contract sets it out before you sign: either the remaining care months or a site buyout. Nothing is improvised per client.</p></div>
-      <div><h3 style="font-size:17px;margin-bottom:8px">I have a Square or Linktree page already</h3><p style="color:var(--grey);font-size:14.5px">That&rsquo;s a starting point, not a website you own. We build your real site and link your ordering and socials into it.</p></div>
+    <h2 class="title">Plain Answers</h2>
+    <div class="faq-grid">
+      <div><h3>Total cost?</h3><p>$499 + $49/mo care = $793 for build + first 6 months. Domain if needed: ~$13/yr at cost.</p></div>
+      <div><h3>How fast?</h3><p>Target 2–3 days, once we have your menu/services, photos, hours.</p></div>
+      <div><h3>What&rsquo;s in $49/mo care?</h3><p>Hosting management, uptime, security, 2 small edits/mo. More? Unlimited edits +$50/mo.</p></div>
+      <div><h3>Why the 6-month minimum?</h3><p>Low $499 build, kept fair by care that maintains your site. After 6 months: month-to-month. ($0-down agencies: 12 months.)</p></div>
+      <div><h3>Cancel inside 6 months?</h3><p>In the contract, before you sign: remaining care months, or a site buyout. No surprises.</p></div>
+      <div><h3>I have Square or Linktree</h3><p>A start — not a site you own. We build yours and link ordering + socials.</p></div>
     </div>
   </div>
 </section>
@@ -356,17 +360,53 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
   <div class="wrap contact-grid">
     <div>
       <p class="eyebrow">Contact</p>
-      <h2 class="title">Get Your Free<br>Mockup This Week</h2>
-      <p class="body" style="color:var(--grey);margin-top:18px;max-width:420px">One email is the whole process. Tell us about your business and we&rsquo;ll send back a first look at your site &mdash; free, no commitment, no sales call. If you like it, we build it.</p>
-      <a class="more" href="mailto:stonearchwebdesign@gmail.com">stonearchwebdesign@gmail.com <span class="arr">&#8594;</span></a>
+      <h2 class="title">Get Your Free Mockup</h2>
+      <p class="body" style="color:var(--grey);margin-top:18px;max-width:420px">One email. Tell us your business. We send a first look — free, no commitment, no sales call. Like it, we build it.</p>
+      <a class="more" href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request">stonearchwebdesign@gmail.com <span class="arr">&#8594;</span></a>
     </div>
     <div style="background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:38px 36px;text-align:center">
       <span style="width:64px;height:64px;border-radius:50%;background:var(--orange);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px">&#9993;</span>
-      <strong style="font-size:20px;display:block;margin-bottom:6px">Email us — it&rsquo;s the whole process</strong>
-      <p style="color:var(--grey);font-size:14.5px;max-width:380px;margin:0 auto 22px">Send your business name, what you sell, and your hours. We reply within one business day with your free mockup started.</p>
-      <a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" style="display:inline-block;background:var(--orange);color:#fff;font-weight:600;font-size:15.5px;padding:16px 34px;border-radius:999px;max-width:100%;word-break:break-all">stonearchwebdesign@gmail.com</a>
-      <p style="color:#8A8A8A;font-size:13px;margin-top:18px"><strong style="color:var(--orange)">Free mockup first</strong> — you pay nothing until you have seen your site.</p>
+      <strong style="font-size:20px;display:block;margin-bottom:6px">Email us</strong>
+      <p style="color:var(--grey);font-size:14.5px;max-width:380px;margin:0 auto 22px">Business name, what you sell, hours. We reply in one business day with your mockup started.</p>
+      <a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" style="display:inline-block;background:var(--orange);color:#fff;font-weight:600;font-size:14px;padding:14px 22px;border-radius:20px;max-width:100%;word-break:break-all">stonearchwebdesign@gmail.com</a>
+      <p style="color:#8A8A8A;font-size:13px;margin-top:18px"><strong style="color:var(--orange)">Free mockup first.</strong> Pay nothing until you see your site.</p>
     </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">Stone<span style="color:var(--orange)">Arch</span></div>
+        <p>One-page sites for Minneapolis small businesses with no real website. $499 build + $49/mo care. Free mockup first.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">One-Page Website</a></li>
+          <li><a href="#services">Growth Program</a></li>
+          <li><a href="#services">Google Profile Fix</a></li>
+          <li><a href="#services">Menu + QR Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request">Email us</a></li>
+          <li><a href="#contact">Free mockup</a></li>
+        </ul>
+      </div>
     </div>
     <div class="foot-bottom">
       <span>Copyright &copy; 2026 Stone Arch Web Design</span>
@@ -375,12 +415,12 @@ footer{background:var(--band);padding:72px 0 0;margin-top:0}
   </div>
 </footer>
 
+<a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" id="stickycta">Get my free mockup</a>
+
 <script>
-});
 document.querySelectorAll('.tabs button').forEach(function(b){
   b.addEventListener('click',function(){
-    });
-document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
     b.classList.add('on');
     var f=b.dataset.f;
     document.querySelectorAll('.card').forEach(function(c){
@@ -389,7 +429,5 @@ document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove
   });
 });
 </script>
-<a href="mailto:stonearchwebdesign@gmail.com?subject=Free%20mockup%20request" id="stickycta" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--orange);color:#fff;text-align:center;font-weight:600;padding:15px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25)">Get my free mockup</a>
-<style>@media(max-width:760px){#stickycta{display:block}body{padding-bottom:74px}}</style>
 </body>
 </html>
