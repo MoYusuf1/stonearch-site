@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#2E2620">
 <title>One-Page Websites in Minneapolis — $499 Flat | Stone Arch Web Design</title>
 <meta name="description" content="One-page websites for Minneapolis–St. Paul small businesses with no website yet. $499 build + $49/mo care. Free mockup first.">
@@ -35,7 +35,7 @@
   --r:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:#2E2620}
 body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);font-size:15.5px;line-height:1.65;overflow-x:clip}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -46,7 +46,7 @@ h2.title{font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.2;letter-s
 .more:hover .arr{transform:translateX(4px)}
 
 /* hero */
-.hero{background:var(--dark);position:relative;color:#fff;overflow:hidden}
+.hero{background:var(--dark);position:relative;color:#fff;overflow:hidden;padding-top:env(safe-area-inset-top)}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(46,38,32,.88) 0%,rgba(46,38,32,.84) 55%,rgba(46,38,32,.90) 100%)}
 .hero-in{position:relative;z-index:2}
