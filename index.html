@@ -19,6 +19,8 @@
 <meta name="twitter:image" content="https://moyusuf1.github.io/stonearch-site/img/hero-room.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/hero-room-m.webp 900w, img/hero-room.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -41,9 +43,10 @@ h2.title{font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.2;letter-s
 .more:hover .arr{transform:translateX(4px)}
 
 /* hero */
-.hero{background:var(--dark) url('img/hero-room.jpg') center/cover no-repeat;position:relative;color:#fff}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,40,48,.72) 0%,rgba(29,40,48,.45) 55%,rgba(29,40,48,.78) 100%)}
-.hero-in{position:relative;z-index:1}
+.hero{background:var(--dark);position:relative;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(29,40,48,.72) 0%,rgba(29,40,48,.45) 55%,rgba(29,40,48,.78) 100%)}
+.hero-in{position:relative;z-index:2}
 nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
 .logo{font-size:22px;font-weight:700;letter-spacing:.01em}
 .logo span{color:var(--orange)}
@@ -155,6 +158,7 @@ footer{background:var(--band);padding:72px 0 0}
 
 <!-- HERO -->
 <header class="hero">
+  <img class="hero-bg" src="img/hero-room.webp" srcset="img/hero-room-m.webp 900w, img/hero-room.webp 1600w" sizes="100vw" fetchpriority="high" alt="" aria-hidden="true">
   <div class="wrap hero-in">
     <nav>
       <a class="logo" href="#">Stone<span>Arch</span></a>
@@ -232,7 +236,7 @@ footer{background:var(--band);padding:72px 0 0}
 <!-- PROCESS -->
 <section class="split" id="about">
   <div class="wrap split-grid">
-    <div class="imgwrap"><img src="img/hero-cafe.jpg" alt="Café interior with chalk menu board" loading="lazy" decoding="async"></div>
+    <div class="imgwrap"><img src="img/hero-cafe.webp" alt="Café interior with chalk menu board" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="title">See It Before You Pay</h2>
       <p class="body">A free mockup of your business — name, photos, menu — on a tested template. Approve it. Then pay.</p>
@@ -251,8 +255,8 @@ footer{background:var(--band);padding:72px 0 0}
     </div>
     <div class="collage">
       <img class="c1" src="img/card-sundae.jpg" alt="Chocolate sundae in a glass" loading="lazy" decoding="async">
-      <img class="c2" src="img/konbu-noheader.png" alt="Website design example — ramen counter" loading="lazy" decoding="async">
-      <img class="c3" src="img/hero-cafe.jpg" style="object-position:50% 40%" alt="Café interior" loading="lazy" decoding="async">
+      <img class="c2" src="img/konbu-noheader.webp" alt="Website design example — ramen counter" loading="lazy" decoding="async">
+      <img class="c3" src="img/hero-cafe.webp" style="object-position:50% 40%" alt="Café interior" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
