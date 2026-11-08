@@ -13,12 +13,13 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/reveal";
+import { Container, Logo, Pill } from "@/components/site";
 import { cn } from "@/lib/utils";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH;
@@ -34,51 +35,6 @@ const nav = [
   ["Answers", "#answers"],
   ["Contact", "#contact"],
 ];
-
-function Pill({
-  href,
-  dark = true,
-  className,
-  children,
-}: {
-  href: string;
-  dark?: boolean;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Button
-      nativeButton={false}
-      render={<a href={href} />}
-      variant={dark ? "default" : "outline"}
-      className={cn(
-        "h-[50px] rounded-full px-6 text-[17px] font-medium",
-        dark ? "bg-black text-white hover:bg-black/80" : "border-black/10 bg-transparent text-black",
-        className,
-      )}
-    >
-      {children}
-    </Button>
-  );
-}
-
-function Container({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className={cn("mx-auto w-full max-w-[1428px] px-6", className)} {...props} />;
-}
-
-function Logo({ light = false }: { light?: boolean }) {
-  return (
-    <a href="#top" aria-label="Stone Arch, back to top" className={cn("flex items-center gap-2", light ? "text-white" : "text-black")}>
-      <svg viewBox="0 0 32 32" className="size-7" aria-hidden="true">
-        <path fill="currentColor" d="M5 29V15a11 11 0 0 1 22 0v14h-6V15a5 5 0 0 0-10 0v14Z" />
-        <path fill="currentColor" d="M3 29h26v2H3z" />
-      </svg>
-      <span className="text-[19px] font-semibold tracking-tight whitespace-nowrap">
-        Stone Arch
-      </span>
-    </a>
-  );
-}
 
 function Header() {
   return (
@@ -98,7 +54,7 @@ function Header() {
           <a href={MAIL} className="hidden text-[15px] font-medium sm:block">
             Email us
           </a>
-          <Pill href={MOCKUP} className="h-[39px] px-[18px] text-[15px]">
+          <Pill href={MOCKUP} className="hidden h-[39px] px-[18px] text-[15px] sm:inline-flex">
             Get a free mockup
           </Pill>
           <Sheet>
@@ -111,11 +67,14 @@ function Header() {
               <SheetTitle>Menu</SheetTitle>
               <nav className="mt-6 flex flex-col gap-4">
                 {nav.map(([label, href]) => (
-                  <a key={href} href={href} className="text-xl font-medium">
+                  <SheetClose key={href} nativeButton={false} render={<a href={href} />} className="text-left text-xl font-medium">
                     {label}
-                  </a>
+                  </SheetClose>
                 ))}
               </nav>
+              <Pill href={MOCKUP} className="mt-8 w-full">
+                Get a free mockup
+              </Pill>
             </SheetContent>
           </Sheet>
         </div>
@@ -127,20 +86,20 @@ function Header() {
 function Hero() {
   return (
     <section id="top">
-      <Container className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
+      <Container className="grid items-center gap-10 pt-8 pb-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
         <div>
           <p className="flex items-center gap-3 text-[15px] text-black/60">
             Web design in <span className="font-semibold text-black italic">Minneapolis</span>
           </p>
-          <h1 className="mt-10 max-w-[620px] text-[44px] leading-[1.1] font-medium tracking-[-0.02em] md:text-[56px]">
+          <h1 className="mt-6 max-w-[620px] lg:mt-10 text-[44px] leading-[1.1] font-medium tracking-[-0.02em] md:text-[56px]">
             A simple website for your shop.
           </h1>
           <p className="mt-6 max-w-[560px] text-[20px] leading-[1.3] text-black/60">
             One-page websites for Minneapolis small businesses. $499 to build, $49 a month, free mockup first.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Pill href={MOCKUP}>Get a free mockup</Pill>
-            <Pill href="#services" dark={false}>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:flex">
+            <Pill href={MOCKUP} className="px-3 text-[15px] sm:px-6 sm:text-[17px]">Get a free mockup</Pill>
+            <Pill href="#services" dark={false} className="px-3 text-[15px] sm:px-6 sm:text-[17px]">
               See pricing
             </Pill>
           </div>
@@ -155,7 +114,7 @@ function Hero() {
             height={1097}
             fetchPriority="high"
             alt="Inside a small Minneapolis-style cafe"
-            className="aspect-[4/3] w-full rounded-2xl object-cover"
+            className="aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[16/9] lg:aspect-[4/3]"
           />
         </div>
       </Container>
@@ -175,14 +134,14 @@ const features = [
 function Features() {
   return (
     <section id="services" className="bg-[#f7f7f5]">
-      <Container className="py-16">
+      <Container className="py-10 sm:py-16">
         <h2 className="sr-only">What you get</h2>
-        <Reveal className="grid overflow-hidden rounded-2xl border border-black/10 bg-white sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 lg:grid-cols-3">
           {features.map(([Icon, title, text]) => (
-            <div key={title} className="border-black/10 p-8 sm:border-r sm:border-b">
+            <div key={title} className="bg-white p-5 sm:p-8">
               <Icon className="size-6" strokeWidth={1.5} />
-              <h3 className="mt-10 text-[17px] font-medium">{title}</h3>
-              <p className="mt-1 text-[15px] text-black/60">{text}</p>
+              <h3 className="mt-3 text-[16px] font-medium sm:mt-10 sm:text-[17px]">{title}</h3>
+              <p className="mt-1 text-[14px] text-black/60 sm:text-[15px]">{text}</p>
             </div>
           ))}
         </Reveal>
@@ -194,20 +153,20 @@ function Features() {
 function About() {
   return (
     <section id="about">
-      <Container className="grid items-end gap-12 py-24 lg:grid-cols-[1fr_1.4fr]">
+      <Container className="grid items-end gap-8 py-14 lg:grid-cols-[1fr_1.4fr] lg:gap-12 lg:py-24">
         <Reveal>
           <h2 className="max-w-[440px] text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
             Just send one email.
           </h2>
-          <Pill href={MOCKUP} className="mt-10">
+          <Pill href={MOCKUP} className="mt-6 lg:mt-10">
             Get a free mockup
           </Pill>
         </Reveal>
         <Reveal>
           <Card className="grid gap-0 overflow-hidden rounded-2xl bg-black p-0 text-white ring-0 md:grid-cols-[1fr_1fr]">
-            <img loading="lazy" decoding="async" src={img("about.jpg")} alt="Laptop on a desk" className="h-full min-h-[320px] w-full object-cover" />
-            <div className="flex flex-col justify-between gap-10 p-8">
-              <p className="text-[20px] leading-[1.35]">
+            <img loading="lazy" decoding="async" src={img("about.jpg")} alt="Laptop on a desk" className="h-48 w-full object-cover md:h-full md:min-h-[320px]" />
+            <div className="flex flex-col justify-between gap-6 p-6 md:gap-10 md:p-8">
+              <p className="text-[18px] leading-[1.35] md:text-[20px]">
                 I&rsquo;m a software engineer in Minneapolis, not an agency. You talk to me, the person who builds your
                 site.
               </p>
@@ -232,7 +191,7 @@ const steps = [
 // Step 3 visual: what the monthly plan looks like, instead of a stock photo.
 function SiteStatus() {
   return (
-    <div className="flex h-44 flex-col justify-center gap-3 rounded-xl bg-white p-5 text-[15px] shadow-sm">
+    <div className="flex h-36 flex-col justify-center gap-3 md:h-44 rounded-xl bg-white p-5 text-[15px] shadow-sm">
       <div className="flex items-center justify-between">
         <span className="font-medium">yourshop.com</span>
         <span className="flex items-center gap-1.5 text-[13px] text-green-700">
@@ -256,15 +215,15 @@ function SiteStatus() {
 function HowItWorks() {
   return (
     <section id="how">
-      <Container className="py-16">
+      <Container className="py-10 sm:py-16">
         <Reveal>
           <h2 className="text-center text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
             How it works
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-4 md:grid-cols-3 md:grid-rows-2">
+        <div className="mt-8 grid gap-4 md:mt-14 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
           {steps.map((s, i) => (
-            <Reveal key={s.title} className={cn(i === 0 && "md:col-span-2 md:row-span-2")}>
+            <Reveal key={s.title} className={cn(i === 0 && "md:col-span-2 lg:row-span-2")}>
               <Card className="h-full gap-6 rounded-2xl bg-[#f7f7f5] p-6 ring-0 md:p-8">
                 <div>
                   <h3 className={cn("font-medium", i === 0 ? "text-[28px]" : "text-[20px]")}>{s.title}</h3>
@@ -274,7 +233,7 @@ function HowItWorks() {
                   <img loading="lazy" decoding="async"
                     src={img(s.image)}
                     alt={s.alt}
-                    className={cn("w-full rounded-xl object-cover", i === 0 ? "h-56 md:h-auto md:min-h-0 md:flex-1" : "h-44")}
+                    className={cn("w-full rounded-xl object-cover", i === 0 ? "h-44 md:h-64 lg:h-auto lg:min-h-0 lg:flex-1" : "h-36 md:h-44")}
                   />
                 ) : (
                   <SiteStatus />
@@ -300,7 +259,7 @@ const work = [
 function Work() {
   return (
     <section id="work">
-      <Container className="py-24">
+      <Container className="py-14 lg:py-24">
         <Reveal className="text-center">
           <h2 className="text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
             Sample sites
@@ -309,17 +268,17 @@ function Work() {
           </h2>
           <p className="mt-4 text-[14px] text-black/60">Examples, not client work</p>
         </Reveal>
-        <Reveal className="mx-auto mt-12 grid max-w-[1180px] gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="mx-auto mt-8 grid max-w-[1180px] grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:mt-12 lg:gap-x-6 lg:gap-y-10">
           {work.map(([label, file]) => (
             <figure key={file} className="group">
-              <div className="overflow-hidden rounded-2xl bg-[#f7f7f5]">
+              <div className="overflow-hidden rounded-xl bg-[#f7f7f5] lg:rounded-2xl">
                 <img loading="lazy" decoding="async"
                   src={img(file)}
                   alt={`Sample website photo for a ${label.toLowerCase()}`}
                   className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <figcaption className="mt-3 text-[17px] font-medium">{label}</figcaption>
+              <figcaption className="mt-2 text-[15px] font-medium lg:mt-3 lg:text-[17px]">{label}</figcaption>
             </figure>
           ))}
         </Reveal>
@@ -339,33 +298,23 @@ const answers = [
 function Answers() {
   return (
     <section id="answers">
-      <Container className="py-16">
+      <Container className="py-10 sm:py-16">
         <Reveal className="text-center">
           <h2 className="mx-auto max-w-[620px] text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
             Questions
           </h2>
         </Reveal>
-        <Reveal className="mt-10">
-          <Tabs defaultValue={answers[0][0]} className="items-center">
-            <TabsList className="h-auto flex-wrap justify-center gap-2 bg-transparent">
-              {answers.map(([q]) => (
-                <TabsTrigger
-                  key={q}
-                  value={q}
-                  className="h-9 flex-none rounded-full px-4 text-[14px] data-active:bg-[#f2f0ec] data-active:shadow-none"
-                >
-                  {q}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+        <Reveal className="mx-auto mt-8 max-w-[760px]">
+          <dl className="divide-y divide-black/10 border-y border-black/10">
             {answers.map(([q, a]) => (
-              <TabsContent key={q} value={q} keepMounted className="mt-6 max-w-[640px] text-center text-[20px] leading-[1.35] text-black/60">
-                {a}
-              </TabsContent>
+              <div key={q} className="py-5 sm:grid sm:grid-cols-[180px_1fr] sm:gap-6">
+                <dt className="text-[17px] font-medium">{q}</dt>
+                <dd className="mt-1 text-[17px] text-black/60 sm:mt-0">{a}</dd>
+              </div>
             ))}
-          </Tabs>
+          </dl>
         </Reveal>
-        <p className="mt-10 text-center text-[15px] text-black/60">
+        <p className="mt-6 text-center text-[15px] text-black/60">
           Other questions?{" "}
           <a href={MAIL} className="font-medium text-black underline underline-offset-4">
             Email us
@@ -379,15 +328,23 @@ function Answers() {
 function Contact() {
   return (
     <section id="contact">
-      <Container className="py-24 text-center">
+      <Container className="grid items-center gap-8 py-14 lg:grid-cols-2 lg:gap-12 lg:py-24">
         <Reveal>
-          <h2 className="text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
-            Ready when you are.
-          </h2>
-          <p className="mx-auto mt-6 max-w-[520px] text-[17px] text-black/80">
-            Send your shop name. We send back a free mockup.
-          </p>
-          <Pill href={MOCKUP} className="mt-8">
+          <h2 className="text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">Ready when you are.</h2>
+          <p className="mt-4 max-w-[520px] text-[17px] text-black/60">Send your shop name. We send back a free mockup.</p>
+        </Reveal>
+        <Reveal className="relative overflow-hidden rounded-2xl">
+          <img
+            loading="lazy"
+            decoding="async"
+            src={img("cafe-owner.webp")}
+            alt="A smiling owner in her coffee shop"
+            className="aspect-[16/9] w-full object-cover"
+          />
+          <Pill
+            href={MOCKUP}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/85"
+          >
             Get a free mockup
           </Pill>
         </Reveal>
@@ -405,32 +362,15 @@ const footerCols = [
 function Footer() {
   return (
     <footer className="bg-black text-white">
-      <Container className="grid items-center gap-12 py-24 lg:grid-cols-2">
-        <Reveal>
-          <h2 className="max-w-[560px] text-[40px] leading-[1.15] font-medium tracking-[-0.02em] md:text-[50px]">
-            Your shop, online in days.
-          </h2>
-          <p className="mt-6 text-[14px] text-white/60">
-            Serving Minneapolis&ndash;St. Paul &middot; stonearchwebdesign@gmail.com
-          </p>
-        </Reveal>
-        <Reveal className="relative overflow-hidden rounded-2xl">
-          <img loading="lazy" decoding="async" src={img("cafe-owner.webp")} alt="A smiling owner in her coffee shop" className="aspect-[16/9] w-full object-cover" />
-          <Pill href={MOCKUP} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/85">
-            Get a free mockup
-          </Pill>
-        </Reveal>
-      </Container>
-      <Container>
-        <Separator className="bg-white/15" />
-        <div className="grid gap-10 py-16 sm:grid-cols-3">
+      <Container className="py-10 lg:py-16">
+        <div className="grid grid-cols-3 gap-4 sm:gap-10">
           {footerCols.map(([title, links]) => (
             <div key={title}>
-              <p className="text-[15px] font-medium">{title}</p>
+              <p className="text-[14px] font-medium sm:text-[15px]">{title}</p>
               <ul className="mt-3 space-y-2">
                 {links.map(([label, href]) => (
                   <li key={label}>
-                    <a href={href} className="text-[15px] text-white/70 hover:text-white">
+                    <a href={href} className="text-[14px] text-white/70 hover:text-white sm:text-[15px]">
                       {label}
                     </a>
                   </li>
@@ -439,10 +379,13 @@ function Footer() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-2 pb-16">
+        <Separator className="my-8 bg-white/15" />
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <Logo light />
-          <p className="text-[13px] text-white/60">&copy; 2026 Stone Arch Web Design</p>
-                  </div>
+          <p className="text-[13px] text-white/60">
+            Serving Minneapolis&ndash;St. Paul &middot; &copy; 2026 Stone Arch Web Design
+          </p>
+        </div>
       </Container>
     </footer>
   );
