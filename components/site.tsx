@@ -34,7 +34,7 @@ export function Container({ className, ...props }: React.ComponentProps<"div">) 
 
 export function Logo({ light = false, href = "#top" }: { light?: boolean; href?: string }) {
   return (
-    <a href={href} aria-label="Stone Arch, back to top" className={cn("flex items-center gap-2", light ? "text-white" : "text-black")}>
+    <a href={href} aria-label="Stone Arch home" className={cn("flex items-center gap-2", light ? "text-white" : "text-black")}>
       <svg viewBox="0 0 32 32" className="size-7" aria-hidden="true">
         <path fill="currentColor" d="M5 29V15a11 11 0 0 1 22 0v14h-6V15a5 5 0 0 0-10 0v14Z" />
         <path fill="currentColor" d="M3 29h26v2H3z" />

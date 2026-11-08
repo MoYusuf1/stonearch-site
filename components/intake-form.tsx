@@ -16,7 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
-import { BRAND, LEAD_ENDPOINT, checkLead, consentText, type Lead, type LeadField, type Vertical } from "@/lib/leads";
+import { BRAND, LEAD_ENDPOINT, checkLead, consentText, type Lead, type LeadField } from "@/lib/leads";
+import type { Niche } from "@/lib/niches";
 
 type Status = { kind: "idle" | "sending" | "sent" } | { kind: "error"; field?: LeadField; message: string };
 
@@ -58,7 +59,7 @@ function Choices({ name, legend, options, value, onChange, error }: {
   );
 }
 
-export function IntakeForm({ vertical }: { vertical: Vertical }) {
+export function IntakeForm({ niche }: { niche: Niche }) {
   const [f, setF] = useState({ service: "", zip: "", problem: "", timeline: "", name: "", phone: "", email: "" });
   const [consented, setConsented] = useState(false);
   const [trap, setTrap] = useState(""); // honeypot: people never see it, bots fill it
@@ -76,7 +77,7 @@ export function IntakeForm({ vertical }: { vertical: Vertical }) {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    const problem = checkLead({ vertical: vertical.slug, ...f }, consented);
+    const problem = checkLead({ vertical: niche.slug, ...f }, consented);
     if (problem) {
       setStatus({ kind: "error", ...problem });
       document.getElementById(`field-${problem.field}`)?.scrollIntoView({ block: "center" });
@@ -87,7 +88,7 @@ export function IntakeForm({ vertical }: { vertical: Vertical }) {
 
     const now = new Date().toISOString();
     const lead: Lead = {
-      vertical: vertical.slug,
+      vertical: niche.slug,
       ...f,
       consent: { agreed: true, text: consentText(BRAND), at: now },
       page: window.location.href,
@@ -131,10 +132,10 @@ export function IntakeForm({ vertical }: { vertical: Vertical }) {
         <form onSubmit={submit} noValidate>
           <FieldGroup className="gap-4">
             <div id="field-service">
-              <Choices name="service" legend={vertical.question} options={vertical.services} value={f.service} onChange={set("service")} error={errorFor("service")} />
+              <Choices name="service" legend={niche.question} options={niche.services} value={f.service} onChange={set("service")} error={errorFor("service")} />
             </div>
             <div id="field-timeline">
-              <Choices name="timeline" legend="How soon?" options={vertical.timelines} value={f.timeline} onChange={set("timeline")} error={errorFor("timeline")} />
+              <Choices name="timeline" legend="How soon?" options={niche.timelines} value={f.timeline} onChange={set("timeline")} error={errorFor("timeline")} />
             </div>
             <Field id="field-problem" data-invalid={!!errorFor("problem") || undefined}>
               <FieldLabel htmlFor="problem" className="text-[15px]">
@@ -145,7 +146,7 @@ export function IntakeForm({ vertical }: { vertical: Vertical }) {
                 value={f.problem}
                 onChange={(e) => set("problem")(e.target.value)}
                 maxLength={1000}
-                placeholder={vertical.placeholder}
+                placeholder={niche.placeholder}
                 aria-invalid={!!errorFor("problem") || undefined}
                 className="min-h-16 bg-white text-[16px]"
               />

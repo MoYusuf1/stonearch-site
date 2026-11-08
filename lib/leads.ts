@@ -1,4 +1,4 @@
-// Homeowner lead pages. Kept apart from the studio homepage: nothing there links here.
+// Shared lead settings for the help site. Niche content lives in lib/niches.ts.
 
 // Placeholder until the lead-brand decision. Change it here only.
 export const BRAND = "Stone Arch";
@@ -14,33 +14,8 @@ export const LEADS_INDEXABLE = false;
 export const consentText = (brand: string) =>
   `I agree that ${brand} may call, text, or email me about this request and share it with one local pro. Message and data rates may apply. Reply STOP to opt out.`;
 
-export type Vertical = {
-  slug: "furnace" | "snow";
-  question: string;
-  services: string[];
-  timelines: string[];
-  placeholder: string;
-};
-
-export const verticals: Record<Vertical["slug"], Vertical> = {
-  furnace: {
-    slug: "furnace",
-    question: "What's happening?",
-    services: ["No heat at all", "Not warm enough", "Strange noise", "Something else"],
-    timelines: ["Right now", "Today", "This week", "Not urgent"],
-    placeholder: "Example: It runs but blows cold air.",
-  },
-  snow: {
-    slug: "snow",
-    question: "What needs clearing?",
-    services: ["Driveway", "Sidewalk", "Roof", "Driveway + sidewalk"],
-    timelines: ["Right now", "Before the next snow", "All winter"],
-    placeholder: "Example: Long driveway. I leave for work at 7.",
-  },
-};
-
 export type Lead = {
-  vertical: Vertical["slug"];
+  vertical: string; // niche slug
   service: string;
   zip: string;
   problem: string;

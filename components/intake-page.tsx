@@ -3,21 +3,9 @@ import type { Metadata } from "next";
 import { Clock, Gift, MapPin } from "lucide-react";
 import { IntakeForm } from "@/components/intake-form";
 import { Container } from "@/components/site";
-import { BRAND, LEADS_INDEXABLE, type Vertical } from "@/lib/leads";
-
-type Photo = { src: string; alt: string };
-
-export type IntakeCopy = {
-  vertical: Vertical;
-  title: string;
-  description: string;
-  headline: string;
-  warning?: string;
-  pains: string[];
-  hero: Photo;
-  side: Photo;
-  faqs: [string, string][];
-};
+import { BRAND, LEADS_INDEXABLE } from "@/lib/leads";
+import type { Niche } from "@/lib/niches";
+import { SITE_URL } from "@/lib/site-mode";
 
 const photo = (file: string) => `${process.env.NEXT_PUBLIC_BASE_PATH}/img/home/${file}`;
 
@@ -34,18 +22,20 @@ const steps = [
   ["We find you a local pro", "Someone near you who handles this."],
 ];
 
-export function intakeMetadata(c: IntakeCopy): Metadata {
+export function intakeMetadata(c: Niche): Metadata {
   return {
     title: `${c.title} | ${BRAND}`,
     description: c.description,
-    alternates: { canonical: `./${c.vertical.slug}` },
+    alternates: { canonical: `${SITE_URL}${c.slug}` },
+    applicationName: BRAND,
+    authors: [],
     robots: { index: LEADS_INDEXABLE, follow: LEADS_INDEXABLE },
-    openGraph: { title: c.title, description: c.description, siteName: BRAND, url: `./${c.vertical.slug}`, images: [] },
+    openGraph: { title: c.title, description: c.description, siteName: BRAND, url: `${SITE_URL}${c.slug}`, images: [] },
     twitter: { card: "summary", title: c.title, description: c.description, images: [] },
   };
 }
 
-export function IntakePage(c: IntakeCopy) {
+export function IntakePage({ niche: c }: { niche: Niche }) {
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -84,7 +74,7 @@ export function IntakePage(c: IntakeCopy) {
             )}
           </div>
           <div id="get-help">
-            <IntakeForm vertical={c.vertical} />
+            <IntakeForm niche={c} />
           </div>
         </Container>
       </section>
