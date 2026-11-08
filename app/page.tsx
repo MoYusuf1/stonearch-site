@@ -21,6 +21,8 @@ import {
 import { Reveal } from "@/components/reveal";
 import { Container, Logo, Pill } from "@/components/site";
 import { cn } from "@/lib/utils";
+import { HelpHub, helpHubMetadata } from "@/components/help-hub";
+import { SITE, SITE_URL } from "@/lib/site-mode";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH;
 // Page images are 900px WebP copies in public/img/900; the hero also has the full-size original.
@@ -391,21 +393,21 @@ function Footer() {
   );
 }
 
-const SITE = "https://moyusuf1.github.io/stonearch-site/";
+const HOME_URL = SITE_URL;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": `${SITE}#business`,
+      "@id": `${HOME_URL}#business`,
       name: "Stone Arch Web Design",
       description:
         "One-page websites for Minneapolis–St. Paul small businesses: cafes, bakeries, restaurants, and shops. $499 to build, $49 a month for hosting and edits, with a free mockup before you pay.",
-      url: SITE,
+      url: HOME_URL,
       email: "stonearchwebdesign@gmail.com",
-      image: `${SITE}img/hero-cafe.jpg`,
-      logo: `${SITE}apple-touch-icon.png`,
+      image: `${HOME_URL}img/hero-cafe.jpg`,
+      logo: `${HOME_URL}apple-touch-icon.png`,
       priceRange: "$499 build + $49/mo",
       address: { "@type": "PostalAddress", addressLocality: "Minneapolis", addressRegion: "MN", addressCountry: "US" },
       areaServed: [
@@ -432,10 +434,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": `${SITE}#website`,
-      url: SITE,
+      "@id": `${HOME_URL}#website`,
+      url: HOME_URL,
       name: "Stone Arch Web Design",
-      publisher: { "@id": `${SITE}#business` },
+      publisher: { "@id": `${HOME_URL}#business` },
     },
     {
       "@type": "FAQPage",
@@ -448,7 +450,11 @@ const jsonLd = {
   ],
 };
 
+// The help build reuses this route for its own front page.
+export const metadata = SITE === "help" ? helpHubMetadata : {};
+
 export default function Home() {
+  if (SITE === "help") return <HelpHub />;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

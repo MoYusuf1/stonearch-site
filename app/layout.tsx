@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site-mode";
 
 const geist = Geist({ variable: "--font-sans", subsets: ["latin"] });
 
@@ -9,7 +10,7 @@ const description =
   "One-page websites for Minneapolis–St. Paul small businesses. $499 to build, $49 a month, free mockup before you pay. Live in 2–3 days.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moyusuf1.github.io/stonearch-site/"),
+  metadataBase: new URL(SITE_URL),
   title,
   description,
   applicationName: "Stone Arch Web Design",

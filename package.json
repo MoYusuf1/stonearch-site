@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:help": "SITE=help next dev",
     "build": "next build",
+    "build:help": "SITE=help next build && rm -f out/llms.txt out/sitemap.xml out/robots.txt out/card.html out/contact.vcf",
     "start": "next start",
     "lint": "eslint"
   },
