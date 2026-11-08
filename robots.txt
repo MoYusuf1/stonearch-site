@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://moyusuf1.github.io/stonearch-site/sitemap.xml
