@@ -7,6 +7,7 @@
     "dev:help": "SITE=help next dev",
     "build": "next build",
     "build:help": "SITE=help next build && rm -f out/llms.txt out/sitemap.xml out/robots.txt out/card.html out/contact.vcf",
+    "build:pages": "rm -rf out pages-out && next build && mv out pages-out && SITE=help BASE_PATH=/stonearch-site/help SITE_URL=https://moyusuf1.github.io/stonearch-site/help/ npm run build:help && mv out pages-out/help && mv pages-out out",
     "start": "next start",
     "lint": "eslint"
   },
