@@ -3,9 +3,11 @@
 // Placeholder until the lead-brand decision. Change it here only.
 export const BRAND = "Stone Arch";
 
-// Where the intake form POSTs JSON. Set NEXT_PUBLIC_LEAD_ENDPOINT at build time
-// (Persona or a form service). Empty means the form shows "not connected".
-export const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT ?? "";
+// Where the intake form POSTs JSON. NEXT_PUBLIC_LEAD_ENDPOINT can override
+// at build time; the default is the Stone Arch Furnace Intake form on Formspree
+// (free plan, account on sparkyy@muse.ai). Empty means the form shows "not connected".
+export const LEAD_ENDPOINT =
+  process.env.NEXT_PUBLIC_LEAD_ENDPOINT ?? "https://formspree.io/f/moeegvao";
 
 // Keep these pages out of search until the attorney check and the go to publish.
 export const LEADS_INDEXABLE = false;
